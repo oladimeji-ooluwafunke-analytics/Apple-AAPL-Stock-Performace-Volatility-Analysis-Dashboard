@@ -31,7 +31,7 @@ The goal of this project is to:
 
 The analysis utilizes two primary datasets:
 
-### 1. Daily Stock Dataset (`aapl_master_enriched`)
+### 1. Daily Stock Dataset (aapl_master_enriched)
 
 Contains detailed trading information including:
 
@@ -42,7 +42,7 @@ Contains detailed trading information including:
 * 20-Day Volatility Metrics
 * Fiscal Year & Quarter information
 
-### 2. Quarterly Summary Dataset (`aapl_quarterly_summary`)
+### 2. Quarterly Summary Dataset (aapl_quarterly_summary)
 
 Pre-aggregated quarterly performance metrics including:
 
@@ -66,5 +66,79 @@ Key cleaning steps included:
 * Handling inconsistent formatting across fiscal period fields
 * Creation of a unified **Year-Quarter field** for time-based analysis
 * Validation of numeric fields used for aggregation and DAX measures
-
 Proper data preparation ensured reliable aggregation and accurate visual reporting.
+
+## 🔗 Data Modeling
+
+A structured data model was implemented following star-schema best practices.
+
+* Daily and quarterly datasets were connected using fiscal period fields.
+* Relationships were configured to enable synchronized filtering across visuals.
+* Pre-aggregated quarterly metrics were prioritized for performance optimization.
+* Redundant tables were excluded from active analysis to maintain model clarity.
+
+Effective data modeling ensured accurate cross-table analysis and improved dashboard responsiveness.
+
+## 📐 DAX Measures Implemented
+
+The following measures were created to support analytical insights:
+
+## 📐 DAX Measures Implemented
+
+The following measures were created to support analytical insights:
+
+DAX
+Average Close Price = AVERAGE(aapl_master_enriched[close])
+
+Total Volume = SUM(aapl_master_enriched[volume])
+
+Average RSI = AVERAGE(aapl_master_enriched[rsi_14])
+
+Average Volatility = 
+AVERAGE(aapl_quarterly_summary[volatility_20d_mean])
+
+These measures enable dynamic aggregation based on filters and slicer selections.
+
+## 📊 Dashboard Pages & Visualizations
+
+### 📈 Page 1 — Stock Performance Overview
+
+**Purpose:** Monitor overall price behavior and trading activity.
+
+Visuals include:
+
+* Daily Reture Over Time (Line Chart)
+* Close Price Over Time (Line Chart)
+* Average Price / Total Volume KPI Cards
+* Time/Year-based performance slicers
+
+This page provides a high-level understanding of stock movement trends.
+
+### 📉 Page 2 — Risk & Technical Indicators (RSI) Analysis
+
+**Purpose:** Assess market momentum and potential reversal zones.
+
+Visuals include:
+
+* Average RSI Trend Over Time
+* Sum of volatility_20d by Year
+* Average RSI by Year
+* Interactive filtering by fiscal period
+
+Supports identification of overbought and oversold market conditions.
+
+### 📊 Page 3 — Quarterly Performance Analysis
+
+**Purpose:** Compare performance across fiscal quarters.
+
+Visuals include:
+
+* Average Quarterly Return
+* Average 20-Day Volatility by Quarter
+* Quarterly Return Performance
+* Interactive slicers for trend exploration
+
+Provides strategic performance evaluation across time periods.
+
+
+### 📊 Page 4 — Revenue Vs Stock Performance
