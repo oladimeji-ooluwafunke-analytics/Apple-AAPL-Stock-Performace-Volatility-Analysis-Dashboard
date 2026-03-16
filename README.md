@@ -1,144 +1,262 @@
 # 📊 Apple (AAPL) Stock Performance & Volatility Analysis Dashboard
-## 📌 Project Overview
+## 📌 Project Description
 
-This project presents an interactive **Power BI dashboard** designed to analyze Apple Inc. (AAPL) stock performance using historical market data. The objective of this analysis is to evaluate price behavior, trading activity, volatility patterns, and technical indicators across different fiscal periods to support data-driven investment insights.
+This project presents an interactive **Power BI dashboard designed to analyze the historical performance of Apple Inc. (AAPL)** using financial market data and product revenue metrics. The analysis focuses on understanding stock price behavior, technical indicators, volatility patterns, and the relationship between company revenue and stock performance.
 
-The dashboard integrates both **daily trading data** and **quarterly aggregated metrics** to provide a comprehensive view of market performance while enabling trend monitoring, risk assessment, and performance comparison over time.
+The dashboard integrates multiple analytical perspectives including **stock performance trends, risk indicators, quarterly performance analysis, and revenue vs stock performace**. By combining financial data with structured analytics and visualization techniques, the project demonstrates how business intelligence tools can transform raw financial data into meaningful insights that support strategic decision-making.
 
-This project demonstrates practical applications of **data cleaning, transformation, data modeling, DAX calculations, and business-focused visualization design** within a financial analytics context.
+This project highlights practical applications of **data cleaning, data modeling, DAX calculations, and interactive dashboard development** in a financial analytics context.
 
 ## 🎯 Business Objective
 
-Financial markets generate large volumes of time-series data that can be difficult to interpret without structured analytical tools.
+Financial markets generate large volumes of time-series data that require structured analysis to extract meaningful insights.
 
-The goal of this project is to:
+The objective of this project is to:
 
-* Analyze historical stock price performance
-* Identify volatility and risk patterns
-* Monitor trading volume behavior
-* Evaluate technical indicators such as RSI
-* Provide actionable insights for investment decision-making
+* Analyze Apple’s historical stock price performance
+* Identify risk patterns using technical indicators
+* Evaluate quarterly performance trends
+* Analyze volatility across time periods
+* Explore the relationship between product revenue and stock market behavior
+* Present insights through an interactive Power BI dashboard
+
+The dashboard enables analysts, investors, and decision-makers to **monitor stock performance, assess market risk, and explore financial trends in a clear and structured manner.**
 
 ## 🛠 Tools Use
 
-* **Power BI Desktop**
-* **Power Query (Data Cleaning & Transformation)**
-* **DAX (Data Analysis Expressions)**
-* Financial Market Dataset (AAPL Historical Data)
-* Data Modeling & Relationship Management
+The following tools and technologies were used to build this project:
+
+* Power BI Desktop– Dashboard development and visualization
+* Power Query Editor – Data cleaning and transformation
+* DAX (Data Analysis Expressions) – Custom measures and calculations
+* Excel Dataset– Source data for stock and revenue metrics
+* Data Modeling – Building relationships between datasets
 
  ## 📂 Dataset Description
 
-The analysis utilizes two primary datasets:
+The analysis utilizes structured datasets containing both **daily stock market data and quarterly performance metrics**.
 
-### 1. Daily Stock Dataset (aapl_master_enriched)
+### Daily Stock Dataset
 
-Contains detailed trading information including:
+This dataset includes detailed trading records such as:
 
 * Date
-* Open, High, Low, Close prices
-* Trading Volume
+* Opening price
+* High price
+* Low price
+* Closing price
+* Trading volume
+* Daily return
 * RSI (Relative Strength Index)
-* 20-Day Volatility Metrics
-* Fiscal Year & Quarter information
+* Volatility metrics
+* Fiscal year and quarter identifiers
 
-### 2. Quarterly Summary Dataset (aapl_quarterly_summary)
+This dataset enables **granular analysis of daily stock behavior and technical indicators.**
 
-Pre-aggregated quarterly performance metrics including:
+---
 
-* Fiscal Year
-* Fiscal Quarter
-* Average Closing Price
-* Mean Volatility
-* Average Volume
-* Quarterly Performance Indicators
+### Quarterly Performance Dataset
 
-Using quarterly aggregated data improves analytical efficiency and prevents unnecessary recalculation from daily records.
+This dataset contains aggregated quarterly metrics including:
 
-## 🧹 Data Cleaning & Preparation
+* Fiscal year
+* Fiscal quarter
+* Quarterly return percentage
+* Average volatility
+* Revenue metrics by product
 
-Data transformation was performed using **Power Query Editor** to ensure analytical accuracy and model efficiency.
+The quarterly dataset allows the analysis to focus on **long-term trends and seasonal financial patterns.
 
-Key cleaning steps included:
+##  Data Cleaning & Preparation
+Before building the dashboard, the dataset was cleaned and transformed using **Power Query Editor** to ensure data quality and analytical accuracy.
 
-* Removal of unnecessary or duplicate columns to reduce model complexity
-* Standardization of column data types (Date, Text, Decimal Number)
-* Handling inconsistent formatting across fiscal period fields
-* Creation of a unified **Year-Quarter field** for time-based analysis
-* Validation of numeric fields used for aggregation and DAX measures
-Proper data preparation ensured reliable aggregation and accurate visual reporting.
+Key preparation steps included:
 
-## 🔗 Data Modeling
+* Removing unnecessary columns that were not relevant for analysis
+* Standardizing data types for numerical and date fields
+* Creating a **Year-Quarter field** for easier time-based analysis
+* Verifying numeric columns used in DAX calculations
+* Ensuring consistency between fiscal year and fiscal quarter fields
+* Validating aggregated metrics used for quarterly analysis
 
-A structured data model was implemented following star-schema best practices.
+These steps ensured that the data model remained **efficient, accurate, and optimized for dashboard performance.
 
-* Daily and quarterly datasets were connected using fiscal period fields.
-* Relationships were configured to enable synchronized filtering across visuals.
-* Pre-aggregated quarterly metrics were prioritized for performance optimization.
-* Redundant tables were excluded from active analysis to maintain model clarity.
+##  Data Modeling
+A structured data model was created to enable efficient analysis across multiple datasets.
 
-Effective data modeling ensured accurate cross-table analysis and improved dashboard responsiveness.
+Key modeling steps included:
 
-## 📐 DAX Measures Implemented
+* Linking daily stock data with quarterly summary data
+* Creating relationships using fiscal period identifiers
+* Ensuring proper aggregation for quarterly metrics
+* Structuring the model to support dynamic filtering and cross-visual interaction
 
-The following measures were created to support analytical insights:
+A well-designed data model ensures that all visuals respond correctly to slicers and filters while maintaining high performance.
 
-## 📐 DAX Measures Implemented
+##  DAX Measures Implemented
+Several calculated measures were implemented using DAX to support dynamic analysis and visualization.
 
-The following measures were created to support analytical insights:
-
-DAX
 Average Close Price = AVERAGE(aapl_master_enriched[close])
-
-Total Volume = SUM(aapl_master_enriched[volume])
+Average Daily Return = AVERAGE(aapl_master_enriched[daily_return])
 
 Average RSI = AVERAGE(aapl_master_enriched[rsi_14])
 
-Average Volatility = 
-AVERAGE(aapl_quarterly_summary[volatility_20d_mean])
+Average Volatility = AVERAGE(aapl_quarterly_summary[volatility_20d_mean])
 
-These measures enable dynamic aggregation based on filters and slicer selections.
+Quarterly Return % = AVERAGE(aapl_quarterly_summary[quarterly_return_pct])
+
+These measures allow Power BI to dynamically calculate metrics based on user selections and dashboard filters.
+
 
 ## 📊 Dashboard Pages & Visualizations
 
 ### 📈 Page 1 — Stock Performance Overview
 
-**Purpose:** Monitor overall price behavior and trading activity.
+## Purpose
+This page provides a high-level view of Apple’s stock performance and market returns.
 
-Visuals include:
+### Visualizations
 
-* Daily Reture Over Time (Line Chart)
-* Close Price Over Time (Line Chart)
-* Average Price / Total Volume KPI Cards
-* Time/Year-based performance slicers
+## KPI Cards
+    * Display key performance indicators summarizing stock behavior.
 
-This page provides a high-level understanding of stock movement trends.
+## Year Slicer**
+    * Enables users to filter the analysis by specific years.
+
+## Line Chart 
+    * Average Yearly Closing Price
+
+* Displays long-term trends in Apple’s stock price.
+ ## Line Chart — Average Daily Return**
+    * Shows fluctuations in daily stock returns across time.
+
+### Insights Provided
+
+This page helps users quickly identify :
+   * overall price growth trends and return fluctuations,
+   * providing a strong foundation for further analysis.
 
 ### 📉 Page 2 — Risk & Technical Indicators (RSI) Analysis
+### Purpose
 
-**Purpose:** Assess market momentum and potential reversal zones.
+This page focuses on analyzing **market risk and momentum indicators** using technical analysis metrics.
 
-Visuals include:
+### Visualizations
 
-* Average RSI Trend Over Time
-* Sum of volatility_20d by Year
-* Average RSI by Year
-* Interactive filtering by fiscal period
+**Gauge Chart — Average RSI**
 
-Supports identification of overbought and oversold market conditions.
+* Displays the overall RSI level for the selected period.
 
-### 📊 Page 3 — Quarterly Performance Analysis
+**Table Visualization**
 
-**Purpose:** Compare performance across fiscal quarters.
+* Provides detailed values for RSI and other technical metrics.
 
-Visuals include:
+**Line Chart — Date vs Volatility**
 
-* Average Quarterly Return
-* Average 20-Day Volatility by Quarter
-* Quarterly Return Performance
-* Interactive slicers for trend exploration
+* Shows volatility trends across time.
 
-Provides strategic performance evaluation across time periods.
+**Line Chart — Date vs RSI**
 
+* Displays how market momentum changes over time.
+
+### Insights Provided
+
+This page helps identify **periods of increased market risk and potential overbought or oversold conditions.
+
+# 📊 Page 3 — Quarterly Performance Analysis
+### Purpose
+
+This page evaluates Apple’s performance from a **quarterly financial perspective**.
+
+### Visualizations
+
+**KPI Card — Quarterly Return**
+
+* Displays the return percentage for the selected quarter.
+
+**Table Visualization**
+
+* Shows detailed quarterly performance metrics.
+
+**Line Chart — Quarterly Return % vs Year Quarter**
+
+* Displays performance trends across fiscal quarters.
+
+**Line Chart — Average Volatility vs Year Quarter**
+
+* Highlights volatility levels across different quarters.
+
+### Insights Provided
+
+This analysis reveals **quarter-to-quarter performance patterns and volatility fluctuations.
 
 ### 📊 Page 4 — Revenue Vs Stock Performance
+### Purpose
+
+This page explores how Apple’s **product revenue performance relates to stock market behavior.**
+
+### Visualizations
+
+**Pie Chart — Product Average Revenue**
+
+* Displays revenue contribution by product category.
+
+**Table Visualization**
+
+* Provides detailed product revenue values.
+
+**Stacked Column Chart — Product Revenue vs Year Quarter**
+
+* Shows revenue trends for products across fiscal quarters.
+
+### Insights Provided
+
+This page helps analyze **how revenue distribution across products contributes to overall company performance and potential stock valuation.
+
+#  Key Insights
+
+* Apple’s stock demonstrates consistent long-term growth despite short-term volatility fluctuations.
+* Periods of high volatility often correspond with increased market uncertainty.
+* RSI analysis reveals momentum shifts that may signal potential market reversals.
+* Quarterly analysis highlights fluctuations in returns and volatility across fiscal periods.
+* Revenue analysis shows how product performance contributes to overall company growth.
+
+---
+
+# ✅ Recommendations
+
+* Investors should monitor periods of elevated volatility before making major investment decisions.
+* RSI indicators can support entry and exit strategies when combined with broader trend analysis.
+* Price movements accompanied by strong trading volume often indicate stronger market participation.
+* Portfolio diversification strategies may help mitigate risks during volatile market periods.
+* Long-term investment decisions should prioritize sustained performance trends rather than short-term fluctuations.
+
+---
+
+#  Skills Demonstrated
+
+This project demonstrates proficiency in:
+
+* Data Cleaning and Transformation
+* Data Modeling
+* DAX Calculations
+* Financial Data Analysis
+* Interactive Dashboard Development
+* Data Visualization and Storytelling
+* Business Insight Communication
+
+---
+
+# 📷 Dashboard Preview
+
+
+
+
+
+
+
+# ⭐ Project Purpose
+
+This project forms part of my **data analytics portfolio**, demonstrating how financial market data can be transformed into actionable insights through structured analysis and professional dashboard design.
+
+
