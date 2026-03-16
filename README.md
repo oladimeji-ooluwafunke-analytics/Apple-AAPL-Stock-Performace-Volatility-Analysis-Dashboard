@@ -248,8 +248,8 @@ This project demonstrates proficiency in:
 ---
 
 # 📷 Dashboard Preview
-    ![Apple (AAPL) dashboard] (image/Screenshot 2026-03-04 063128.png)
-
+   ![Apple (AAPL) Dashboard](Apple%20(AAPL)%20dashboard%20image/Screenshot%202026-03-04%20063217.png)
+   
 
 
 
