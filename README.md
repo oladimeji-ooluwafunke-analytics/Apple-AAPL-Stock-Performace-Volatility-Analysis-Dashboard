@@ -245,18 +245,24 @@ This project demonstrates proficiency in:
 * Data Visualization and Storytelling
 * Business Insight Communication
 
----
+#### Dashboard Preview
 
-# 📷 Dashboard Preview
-   ![Apple (AAPL) Dashboard](Apple%20(AAPL)%20dashboard%20image/Screenshot%202026-03-04%20063217.png)
+### Stock Performance Overview
+![Apple Stock Performance](Apple%20(AAPL)%20dashboard%20image/Screenshot%202026-03-04%20063128.png)
+
+### Risk & Technical Indicators
+![Apple Risk Dashboard](Apple%20(AAPL)%20dashboard%20image/Screenshot%202026-03-04%20063150.png)
+
+### Quarterly Performace Analysis
+ ![Apple (AAPL) Dashboard](Apple%20(AAPL)%20dashboard%20image/Screenshot%202026-03-04%20063217.png)
+ 
+### Revenue vs Stock Performance
+![Apple Revenue Dashboard](Apple%20(AAPL)%20dashboard%20image/Screenshot%202026-03-04%20063240.png)
+
+#3 Linkedln
+[Connect with me on Linkedln](https://www.linkedin.com/in/oluwafunkeoladimejio)
    
-
-
-
-
-
-
-# ⭐ Project Purpose
+# Project Purpose
 
 This project forms part of my **data analytics portfolio**, demonstrating how financial market data can be transformed into actionable insights through structured analysis and professional dashboard design.
 
