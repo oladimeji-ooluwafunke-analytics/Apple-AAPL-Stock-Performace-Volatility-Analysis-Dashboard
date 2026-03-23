@@ -20,9 +20,9 @@ The objective of this project is to:
 * Explore the relationship between product revenue and stock market behavior
 * Present insights through an interactive Power BI dashboard
 
-The dashboard enables analysts, investors, and decision-makers to **monitor stock performance, assess market risk, and explore financial trends in a clear and structured manner.**
+The dashboard enables analysts, investors, and decision-makers to **monitor stock performance, assess market risk, and explore financial trends in a clear and structured manner.
 
-## 🛠 Tools Use
+## Tools Use
 
 The following tools and technologies were used to build this project:
 
@@ -32,9 +32,9 @@ The following tools and technologies were used to build this project:
 * Excel Dataset– Source data for stock and revenue metrics
 * Data Modeling – Building relationships between datasets
 
- ## 📂 Dataset Description
+ ##  Dataset Description
 
-The analysis utilizes structured datasets containing both **daily stock market data and quarterly performance metrics**.
+The analysis utilizes structured datasets containing both daily stock market data and quarterly performance metrics.
 
 ### Daily Stock Dataset
 
@@ -51,7 +51,7 @@ This dataset includes detailed trading records such as:
 * Volatility metrics
 * Fiscal year and quarter identifiers
 
-This dataset enables **granular analysis of daily stock behavior and technical indicators.**
+This dataset enables:granular analysis of daily stock behavior and technical indicators.
 
 ---
 
@@ -110,36 +110,37 @@ These measures allow Power BI to dynamically calculate metrics based on user sel
 
 ## 📊 Dashboard Pages & Visualizations
 
-### 📈 Page 1 — Stock Performance Overview
+### Page 1 — Stock Performance Overview
 
-## Purpose
+### Purpose
+
 This page provides a high-level view of Apple’s stock performance and market returns.
 
 ### Visualizations
 
-## KPI Cards
-    * Display key performance indicators summarizing stock behavior.
+**KPI Cards**
+Display key performance indicators summarizing stock behavior.
 
-## Year Slicer**
-    * Enables users to filter the analysis by specific years.
+**Year Slicer**
 
-## Line Chart 
-    * Average Yearly Closing Price
+* Enables users to filter the analysis by specific years.
+
+**Line Chart — Average Yearly Closing Price**
 
 * Displays long-term trends in Apple’s stock price.
- ## Line Chart — Average Daily Return**
-    * Shows fluctuations in daily stock returns across time.
+
+**Line Chart — Average Daily Return**
+
+* Shows fluctuations in daily stock returns across time.
 
 ### Insights Provided
 
-This page helps users quickly identify :
-   * overall price growth trends and return fluctuations,
-   * providing a strong foundation for further analysis.
+This page helps users quickly identify **overall price growth trends and return fluctuations**, providing a strong foundation for further analysis.
 
 ### 📉 Page 2 — Risk & Technical Indicators (RSI) Analysis
 ### Purpose
 
-This page focuses on analyzing **market risk and momentum indicators** using technical analysis metrics.
+This page focuses on analyzing : market risk and momentum indicators,using technical analysis metrics.
 
 ### Visualizations
 
@@ -161,7 +162,7 @@ This page focuses on analyzing **market risk and momentum indicators** using tec
 
 ### Insights Provided
 
-This page helps identify **periods of increased market risk and potential overbought or oversold conditions.
+This page helps identify : periods of increased market risk and potential overbought or oversold conditions.
 
 # 📊 Page 3 — Quarterly Performance Analysis
 ### Purpose
